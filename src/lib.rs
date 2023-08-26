@@ -1,9 +1,16 @@
+#![doc = include_str!("../README.md")]
+#![warn(missing_docs)]
+
 use rand::prelude::*;
 
+/// This trait provides the sorting function
 pub trait RandSort<T> {
+    /// Randsort is a next gen sorting function designed for computers of the 21st century requiring
+    /// luck and faith in order to sort your Vec
     fn randsort(&mut self);
 }
 
+/// The randsort implementation for Vec<T: PartialOrd>
 impl<T: PartialOrd> RandSort<T> for Vec<T> {
     fn randsort(&mut self) {
         let mut rng = rand::thread_rng();
